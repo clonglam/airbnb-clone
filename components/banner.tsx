@@ -18,7 +18,7 @@ const Banner = (props: Props) => {
         </p>
         <button
           className=" text-purple-500 bg-white px-10 py-4 shadow-lg rounded-full my-4 font-bold 
-        hover:shadow-2xl hover:scale-105 active:scale-90 transition-all duration-200"
+        hover:shadow-2xl hover:scale-105 active:scale-90 transition-all duration-300"
         >
           I'm Flexible
         </button>

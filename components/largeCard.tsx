@@ -10,7 +10,7 @@ interface Props {
 
 const LargeCard = ({ img, title, description, buttonText }: Props) => {
   return (
-    <div className="container mx-auto px-5 mt-5 cursor-pointer">
+    <div className="container mx-auto px-5  cursor-pointer py-8">
       <div className="relative">
         <div className="relative h-96 min-w-[300px] ">
           <Image

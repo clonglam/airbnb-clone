@@ -1,5 +1,8 @@
-# Next.js and Auth0 Example
+# Airbnb Clone
 
+## How to use
+
+First add back.env.local.example
 This example shows how you can use `@auth0/nextjs-auth` to easily add authentication support to your Next.js application. It tries to cover a few topics:
 
 - Signing in
