@@ -11,10 +11,11 @@ const Layout = ({ user, loading = false, children }: LayoutProps) => {
   return (
     <>
       <Head>
-        <title>Next.js with Auth0</title>
+        <title>Airbnb Clone-Become a Host</title>
       </Head>
 
-      <Header user={user} loading={loading} />
+      {/* <Header user={user} loading={loading} /> */}
+      <Header />
 
       <main>
         <div className="">{children}</div>
