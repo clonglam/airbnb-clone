@@ -1,27 +1,28 @@
 import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import { serachDataType } from "../interfaces";
-import InfoCard from "../components/infoCard";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
+import { searchDataType } from "../../interfaces";
+import InfoCard from "../../components/infoCard";
 import { format } from "date-fns";
+import Map from "../../components/map";
 
 interface Props {
-  searchData: serachDataType[];
+  searchData: searchDataType[];
 }
 
 const search = ({ searchData }: Props) => {
   const router = useRouter();
   const { location, startDate, endDate, noOfGuests } = router.query;
 
-  //   const formattedStartDate = format(
-  //     new Date(startDate as string),
-  //     "dd MMMM yy"
-  //   );
-  //   const formattedEndDate = format(new Date(endDate as string), "dd MMMM yy");
+  const formattedStartDate = format(
+    new Date(startDate as string),
+    "dd MMMM yy"
+  );
+  const formattedEndDate = format(new Date(endDate as string), "dd MMMM yy");
 
-  //   const vacationPperiod = `${formattedStartDate} - ${formattedEndDate}`;
+  const vacationPperiod = `${formattedStartDate} - ${formattedEndDate}`;
 
   return (
     <div>
@@ -29,7 +30,7 @@ const search = ({ searchData }: Props) => {
       <main className="flex">
         <section className="container mx-auto px-6 pt-14 flex-grow">
           <p className="text-xs">
-            300+ Stays for {noOfGuests} numbers of guests
+            300+ Stays {vacationPperiod} for {noOfGuests} numbers of guests
           </p>
           <h1 className="text-3xl font-semibold mt-2 mb-6">
             Stays in {location}
@@ -44,7 +45,16 @@ const search = ({ searchData }: Props) => {
 
           <div className="flex flex-col">
             {searchData.map(
-              ({ title, location, description, star, price, total, img }) => (
+              ({
+                title,
+                location,
+                description,
+                star,
+                price,
+                total,
+                img,
+                long,
+              }) => (
                 <InfoCard
                   key={`searchData_${title}_${img}`}
                   title={title}
@@ -53,11 +63,16 @@ const search = ({ searchData }: Props) => {
                   star={star}
                   price={price}
                   img={img}
+                  long={long}
                   total={total}
                 />
               )
             )}
           </div>
+        </section>
+
+        <section className="hidden lg:block lg:min-w-[600px] overflow-hidden">
+          <Map searchData={searchData} />
         </section>
       </main>
       <Footer />
@@ -69,7 +84,7 @@ export default search;
 
 export async function getServerSideProps() {
   const searchRes = await fetch("https://links.papareact.com/isz");
-  const searchData = (await searchRes.json()) as serachDataType[];
+  const searchData = (await searchRes.json()) as searchDataType[];
 
   return {
     props: { searchData },

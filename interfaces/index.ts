@@ -19,7 +19,7 @@ export type cardDataType = {
   title: string;
 };
 
-export type serachDataType = {
+export type searchDataType = {
   img: string;
   location: string;
   title: string;

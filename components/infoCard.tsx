@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { AiOutlineHeart, AiFillStar } from "react-icons/ai";
 
 interface Props {
@@ -9,6 +10,7 @@ interface Props {
   description: string;
   star: number;
   price: string;
+  long: number;
   total: string;
 }
 
@@ -20,11 +22,14 @@ const InfoCard = ({
   star,
   price,
   total,
+  long,
 }: Props) => {
+  const router = useRouter();
   return (
     <div
       className="flex w-full border-b-2 py-7 cursor-pointer hover:opacity-80 hover:shadow-lg 
     transition duration ease-out first:border-t"
+      onClick={() => router.push(`/search/${title}`)}
     >
       <div className="relative w-40 h-24 md:h-52 md:w-80 flex-shrink-0">
         <Image

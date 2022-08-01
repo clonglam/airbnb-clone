@@ -1,8 +1,11 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 interface Props {}
 
 const Footer = (props: Props) => {
+  const router = useRouter();
+
   const footerData = [
     {
       title: "About",
@@ -53,7 +56,14 @@ const Footer = (props: Props) => {
             <p className="font-bold text-md">{title}</p>
             {items.map((item) => (
               <div key={`footer_${title}_${item.name}`}>
-                <a className="cursor-pointer">{item.name}</a>
+                <a
+                  className="cursor-pointer"
+                  onClick={() =>
+                    router.push("https://github.com/clonglam/airbnb-clone")
+                  }
+                >
+                  {item.name}
+                </a>
               </div>
             ))}
           </div>
