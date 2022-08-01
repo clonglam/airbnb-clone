@@ -18,8 +18,8 @@ export default function Home({ exporeData, cardData }: Props) {
   return (
     <div className="">
       <Head>
-        <title> Airbnb</title>
-        <link rel="icon" href="/favicon.ico"></link>
+        <title> Airbnb-Clone</title>
+        <link rel="icon" href="/static/assestfavicon.ico"></link>
       </Head>
       <Layout user={user} loading={loading}>
         <Banner />
