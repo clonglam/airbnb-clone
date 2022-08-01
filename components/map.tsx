@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ReactMapGL, { Marker, Popup } from "react-map-gl";
 import getCenter from "geolib/es/getCenter";
 import { searchDataType } from "../interfaces";
+import "mapbox-gl/dist/mapbox-gl.css";
 
 interface Props {
   searchData: searchDataType[];
