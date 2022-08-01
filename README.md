@@ -15,6 +15,7 @@ This example shows how you can use `@auth0/nextjs-auth` to easily add authentica
 Read more: [https://auth0.com/blog/ultimate-guide-nextjs-authentication-auth0/](https://auth0.com/blog/ultimate-guide-nextjs-authentication-auth0/)
 
 ## How to use
+<img width="740" alt="image" src="https://user-images.githubusercontent.com/86845927/182139292-e8e113ec-fb7c-47f0-b58f-34414fcfd9cb.png">
 
 Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
